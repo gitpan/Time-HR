@@ -1,3 +1,4 @@
+use 5.006;
 use ExtUtils::MakeMaker;
 use Config;
 use Carp;
@@ -13,7 +14,7 @@ WriteMakefile(
     'PREREQ_PM'		=> {}, # e.g., Module::Name => 1.1
     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
       (ABSTRACT_FROM => 'HR.pm', # retrieve abstract from module
-       AUTHOR     => 'A. U. Thor <a.u.thor@a.galaxy.far.far.away>') : ()),
+       AUTHOR     => 'Alexander Golomshtok <golomshtok_alexander@jpmorgan.com>') : ()),
     'LIBS'		=> [''], # e.g., '-lm'
 	# Insert -I. if you add *.h files later:
     'INC'		=> '', # e.g., '-I/usr/include/other'

@@ -44,9 +44,15 @@ func_return_t _gethrtime() {
    return gethrtime();
 #endif
 #if defined _LINUX
+#if defined  CLOCK_REALTIME
    struct timespec ts;
    clock_gettime(CLOCK_REALTIME, &ts);
-   return ((func_return_t)ts.tv_sec)*1000000000+ts.tv_nsec;
+   return ((func_return_t)ts.tv_sec)*1e9+ts.tv_nsec;
+#else
+   struct timeval tv;
+   gettimeofday(&tv, NULL);
+   return ((func_return_t)tv.tv_sec)*1e9+tv.tv_usec*1e3;
+#endif
 #endif
 #if defined _CYGWIN
    LARGE_INTEGER ts;
