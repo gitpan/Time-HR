@@ -1,0 +1,6 @@
+Revision history for Perl extension Time::HR.
+
+0.01  Thu Jan 31 13:14:40 2002
+	- original version; created by h2xs 1.21 with options
+		-nTime::HR -v0.01 /usr/include/sys/time.h
+
